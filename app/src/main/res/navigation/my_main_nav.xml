@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_main_nav"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.example.pophop.ui.fragments.movie.MoviesFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment" />
+        <argument
+            android:name="backfromdiscover"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritFragment"
+        android:name="com.example.pophop.ui.fragments.favorit.FavoritFragment"
+        android:label="Favorit"
+        tools:layout="@layout/fragment_favorit" >
+        <action
+            android:id="@+id/action_favoritFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.pophop.ui.fragments.info.InfoFragment"
+        android:label="Movie info"
+        tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="result"
+            app:argType="com.example.pophop.models.Result" />
+        <action
+            android:id="@+id/action_infoFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/discoverFragment"
+        android:name="com.example.pophop.ui.fragments.movie.discover.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discoverFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+    </dialog>
+</navigation>
