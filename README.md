@@ -1,6 +1,12 @@
 # movie app
 
-## Texhnology i used it
+## features
+- show popular movie 
+- filter movie
+- search
+- save in favorits
+
+## Technology i used it
 - room db
 - Retrofit
 - Navigation component
